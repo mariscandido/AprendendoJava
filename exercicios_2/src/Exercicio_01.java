@@ -7,12 +7,12 @@ public class Exercicio_01 {
 
 		int x;
 		int y;
-		int	soma;
-		
+		int soma;
+
 		x = sc.nextInt();
 		y = sc.nextInt();
 		soma = x + y;
-		
+
 		System.out.println("SOMA = " + soma);
 
 		sc.close();
