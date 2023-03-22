@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+import 
+
+public class Exercicio_06 {
+
+	public static void main(String[] args) {
+		Scanner sc =
+
+	}
+
+}

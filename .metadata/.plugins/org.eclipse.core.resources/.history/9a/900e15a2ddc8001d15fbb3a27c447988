@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Exercicio_05 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int cod1, cod2, peca
+
+	}
+
+}
