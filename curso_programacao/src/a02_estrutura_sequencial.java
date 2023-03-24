@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class a02_estrutura_sequencial {
 
 	public static void main(String[] args) {
 
@@ -18,7 +18,7 @@ public class Main {
 		s1 = sc.nextLine();
 		s2 = sc.nextLine();
 		s3 = sc.nextLine();
-		
+
 		System.out.println("DADOS DIGITADOS:");
 		System.out.println(x);
 		System.out.println(y);
