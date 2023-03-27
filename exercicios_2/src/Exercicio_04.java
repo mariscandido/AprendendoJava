@@ -5,17 +5,20 @@ public class Exercicio_04 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		int id, hrt;
-		double vl, salario;
+		System.out.println("Digite a hora inicial do jogo ");
+		int hi = sc.nextInt();
+		System.out.println("Digite a hora final do jogo ");
+		int hf = sc.nextInt();
 
-		id = sc.nextInt();
-		hrt = sc.nextInt();
-		vl = sc.nextDouble();
+		int duracao;
 
-		salario = hrt * vl;
+		if (hi < hf) {
+			duracao = hf - hi;
+		} else {
+			duracao = 24 - hi + hf;
+		}
 
-		System.out.println("NUMBER = " + id);
-		System.out.printf("SALARY = U$ %.2f", salario);
+		System.out.println("O jogo durou: " + duracao + "hora(s)");
 
 		sc.close();
 	}

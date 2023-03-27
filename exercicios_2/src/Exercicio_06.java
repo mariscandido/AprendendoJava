@@ -1,27 +1,30 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Exercicio_06 {
 
 	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		double a, b, c, tri, cir, tra, qua, ret;
+		double x = sc.nextDouble();
 
-		a = sc.nextDouble();
-		b = sc.nextDouble();
-		c = sc.nextDouble();
-
-		tri = (a * c) / 2;
-		cir = (Math.pow(c, 2)) * 3.14159;
-		tra = ((a + b) * c) / 2;
-		qua = (Math.pow(b, 2));
-		ret = a * b;
-
-		System.out.printf("Triangulo: %.3f%n", tri);
-		System.out.printf("Circulo: %.3f%n", cir);
-		System.out.printf("Trapezio: %.3f%n", tra);
-		System.out.printf("Quadrado: %.3f%n", qua);
-		System.out.printf("Retangulo: %.3f%n", ret);
+		if (x < 0.0 || x > 100.0) {
+			System.out.println("Fora de intervalo");
+		}
+		else if (x <= 25.0) {
+			System.out.println("Intervalo [0,25]");
+		}
+		else if (x <= 50.0) {
+			System.out.println("Intervalo (25,50]");
+		}
+		else if (x <= 75.0) {
+			System.out.println("Intervalo (50,75]");
+		}		
+		else {
+			System.out.println("Intervalo (75,100]");
+		}
 
 		sc.close();
 	}
