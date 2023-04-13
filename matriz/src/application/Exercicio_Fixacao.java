@@ -34,10 +34,10 @@ public class Exercicio_Fixacao {
 					if (i > 0) {
 						System.out.println("Numero acima: " + matriz[i - 1][j]);
 					}
-					if (j < matriz[i].length-1) {
+					if (j < matriz[i].length - 1) {
 						System.out.println("Numero a direita: " + matriz[i][j + 1]);
 					}
-					if (i < matriz.length-1) {
+					if (i < matriz.length - 1) {
 						System.out.println("Numero abaixo: " + matriz[i + 1][j]);
 					}
 				}
