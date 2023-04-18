@@ -22,32 +22,31 @@ public class Program1 {
 		Instant dg02 = Instant.parse("2022-04-12T01:30:26Z");
 		Instant dg03 = Instant.parse("2022-04-12T01:30:26-03:00");
 
-		System.out.println();	
+		System.out.println();
 		System.out.println("Data local: " + d02.toString());
 		System.out.println("Data-Hora local: " + dh02.toString());
 		System.out.println("Data-Hora global: " + dg02.toString());
 		System.out.println("Data-Hora global (-3:00): " + dg03.toString());
-		
+
 		// https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/format/DateTimeFormatter.html
 		DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		DateTimeFormatter fmt2 =  DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-		
+		DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
 		// https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/format/DateTimeFormatter.html
 		LocalDate d03 = LocalDate.parse("12/04/2023", fmt1);
 		LocalDateTime dh03 = LocalDateTime.parse("12/04/2023 01:30", fmt2);
-		
-		System.out.println();	
+
+		System.out.println();
 		System.out.println("Data local Formatada: " + d03.toString());
 		System.out.println("Data-Hora local Formatada: " + dh03.toString());
-		
-		
+
 		LocalDate d04 = LocalDate.of(2023, 04, 12);
 		LocalDateTime dh04 = LocalDateTime.of(2023, 04, 12, 19, 47);
 
-		System.out.println();	
+		System.out.println();
 		System.out.println("Data local of: " + d04.toString());
 		System.out.println("Data-Hora local of: " + dh04.toString());
-		
+
 	}
 
 }
