@@ -1,47 +1,28 @@
 package application;
 
-import java.text.ParseException;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.Arrays;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Program {
+	public static void main(String[] args) {
 
-	public static void main(String[] args) throws ParseException {
+		Set<Integer> a = new TreeSet<>(Arrays.asList(0, 2, 4, 5, 6, 8, 10));
+		Set<Integer> b = new TreeSet<>(Arrays.asList(5, 6, 7, 8, 9, 10));
 
-		Scanner sc = new Scanner(System.in);
+		// união
+		Set<Integer> c = new TreeSet<>(a);
+		c.addAll(b);
+		System.out.println(c);
 
-		Set<Integer> a = new HashSet<>();
-		Set<Integer> b = new HashSet<>();
-		Set<Integer> c = new HashSet<>();
+		// intersecção
+		Set<Integer> d = new TreeSet<>(a);
+		d.retainAll(b);
+		System.out.println(d);
 
-		System.out.print("How many students for course A? ");
-		int n = sc.nextInt();
-		for (int i = 0; i < n; i++) {
-			int number = sc.nextInt();
-			a.add(number);
-		}
-
-		System.out.print("How many students for course B? ");
-		n = sc.nextInt();
-		for (int i = 0; i < n; i++) {
-			int number = sc.nextInt();
-			b.add(number);
-		}
-
-		System.out.print("How many students for course C? ");
-		n = sc.nextInt();
-		for (int i = 0; i < n; i++) {
-			int number = sc.nextInt();
-			c.add(number);
-		}
-
-		Set<Integer> total = new HashSet<>(a);
-		total.addAll(b);
-		total.addAll(c);
-
-		System.out.println("Total students: " + total.size());
-
-		sc.close();
+		// diferença
+		Set<Integer> e = new TreeSet<>(a);
+		e.removeAll(b);
+		System.out.println(e);
 	}
 }

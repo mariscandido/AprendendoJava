@@ -1,45 +1,53 @@
 package application;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.time.Instant;
-import java.util.Date;
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 
-import entities.LogEntry;
-
 public class Program {
-
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+		Set<String> set = new HashSet<>();
 
-		System.out.print("Enter file full path: ");
-		String path = sc.nextLine();
+		set.add("TV");
+		set.add("Notebook");
+		set.add("Tablet");
 
-		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+		// verifica se contem na lista o produto
+		System.out.println(set.contains("Notebook"));
 
-			Set<LogEntry> set = new HashSet<>();
-
-			String line = br.readLine();
-			while (line != null) {
-
-				String[] fields = line.split(" ");
-				String username = fields[0];
-				Date moment = Date.from(Instant.parse(fields[1]));
-
-				set.add(new LogEntry(username, moment));
-
-				line = br.readLine();
-			}
-			System.out.println("Total users: " + set.size());
-
-		} catch (IOException e) {
-			System.out.println("Error: " + e.getMessage());
+		System.out.println();
+		for (String p : set) {
+			System.out.println(p);
 		}
-		sc.close();
+
+		// para remover um produto da lista
+		set.remove("TV");
+
+		System.out.println();
+		System.out.println();
+		for (String p : set) {
+			System.out.println(p);
+		}
+
+		set.add("CD");
+		// para remover um produto com tamanho maior que 3
+		set.removeIf(x -> x.length() >= 3);
+
+		System.out.println();
+		System.out.println();
+		for (String p : set) {
+			System.out.println(p);
+		}
+
+		set.add("PC");
+		set.add("Panela");
+		// para remover um produto que comece com a letra C
+		set.removeIf(x -> x.charAt(0) == 'C');
+
+		System.out.println();
+		System.out.println();
+		for (String p : set) {
+			System.out.println(p);
+		}
 	}
 }
